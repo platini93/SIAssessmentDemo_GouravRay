@@ -7,35 +7,13 @@
 
 import Foundation
 import UIKit
-import Security
-import CommonCrypto
+
 
 
 class NetworkRequest: NSObject, URLSessionDelegate {
         
     static let shared = NetworkRequest()
         
-    //var certificatePublicKeys:[String] = ["i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY="]
-
-    var certificatePublicKeys:[String] = ["i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY="]
-        
-        let rsa2048Asn1Header:[UInt8] = [
-            0x30, 0x82, 0x01, 0x22, 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86,
-            0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00, 0x03, 0x82, 0x01, 0x0f, 0x00
-        ]
-        
-        private func sha256(data : Data) -> String {
-            var keyWithHeader = Data(rsa2048Asn1Header)
-            keyWithHeader.append(data)
-            
-            var hash = [UInt8](repeating: 0,  count: Int(CC_SHA256_DIGEST_LENGTH))
-            keyWithHeader.withUnsafeBytes {
-                _ = CC_SHA256($0, CC_LONG(keyWithHeader.count), &hash)
-            }
-            return Data(hash).base64EncodedString()
-        }
-    
-    
     //MARK: HTTP POST , GET , PUT , DELETE METHODS
     
     func getRequest(urlString: String, completion: @escaping (_ data:Data?, _ error:Error?) -> Void) {
@@ -266,36 +244,6 @@ class NetworkRequest: NSObject, URLSessionDelegate {
                 }
             }.resume()
         }
-    
-    
-    
-    
-    //MARK: URLSession Delegate methods
-    
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        
-        guard let serverTrust = challenge.protectionSpace.serverTrust else {
-            completionHandler(.cancelAuthenticationChallenge,nil)
-            return
-        }
-        
-        if let certificate =  SecTrustGetCertificateAtIndex(serverTrust, 2) {
-            
-            let serverPublicKey = SecCertificateCopyKey(certificate)
-            let serverPublicKeyData = SecKeyCopyExternalRepresentation(serverPublicKey!, nil)
-            let data:Data = serverPublicKeyData as! Data
-            let serverHashKey = sha256(data: data)
-            if certificatePublicKeys.contains(serverHashKey) {
-                print("Public Key Pinning completed successfully")
-                completionHandler(.useCredential, URLCredential.init(trust: serverTrust))
-            }else{
-                print("ssl pinning - key comparison failed")
-                completionHandler(.cancelAuthenticationChallenge,nil)
-                
-            }
-        }
-    }
-    
 }
 
 
