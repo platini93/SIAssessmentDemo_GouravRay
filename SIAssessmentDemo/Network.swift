@@ -39,16 +39,13 @@ class NetworkRequest: NSObject, URLSessionDelegate {
     //MARK: HTTP POST , GET , PUT , DELETE METHODS
     
     func getRequest(urlString: String, completion: @escaping (_ data:Data?, _ error:Error?) -> Void) {
-        
-        let token = UserDefaults.standard.value(forKey: "jwtToken") as? String ?? ""
-        
+                
         if let url = URL(string: urlString) {
             
             //Configure request.
             var request = URLRequest(url: url)
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             request.httpMethod = "GET"
             
             //let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue.main)

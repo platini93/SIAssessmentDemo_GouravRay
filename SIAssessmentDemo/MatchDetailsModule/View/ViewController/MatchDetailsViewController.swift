@@ -11,7 +11,7 @@ class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
     
     var matchData:MatchData = MatchData()
     
-    var matchViewModel:MatchDetailViewModel?
+    weak var matchViewModel:MatchDetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
