@@ -10,7 +10,8 @@ class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
     @IBOutlet weak var teamInfoBtn: UIButton!
     
     @IBAction func teamInfoAction(_ sender: Any) {
-        var teamVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamInformationViewController") as! TeamInformationViewController
+        let teamVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamInformationViewController") as! TeamInformationViewController
+        teamVC.matchData = self.matchData
         self.present(teamVC, animated: true)
     }
     
