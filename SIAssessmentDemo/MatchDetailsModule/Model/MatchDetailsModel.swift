@@ -1,9 +1,3 @@
-//
-//  MatchDetailsModel.swift
-//  SIAssessmentDemo
-//
-//  Created by Zentech-038 on 24/05/23.
-//
 
 import Foundation
 
@@ -16,11 +10,16 @@ class MatchDetail {
     var teamHome:String = ""
     var teamAway:String = ""
     var match:Match = Match()
+    var venue:Venue = Venue()
 }
 
 class Match{
     var date:String = ""
     var time:String = ""
+}
+
+class Venue{
+    var name:String = ""
 }
 
 class Teams {
@@ -69,6 +68,10 @@ class MatchDetailsModel {
                     matchData.matchDetail.match.date = match_date
                     matchData.matchDetail.match.time = match_time
                     
+                    let venue = matchDetail?["Venue"] as? [String:Any]
+                    let venue_name = venue?["Name"] as? String ?? ""
+                    matchData.matchDetail.venue.name = venue_name
+
                     let teams = json?["Teams"] as? [String:Any]
                     let team_four = teams?["4"] as? [String:Any]
                     let team_five = teams?["5"] as? [String:Any]

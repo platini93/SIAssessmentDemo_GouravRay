@@ -1,9 +1,3 @@
-//
-//  MatchDetailViewModel.swift
-//  SIAssessmentDemo
-//
-//  Created by Zentech-038 on 24/05/23.
-//
 
 import Foundation
 
