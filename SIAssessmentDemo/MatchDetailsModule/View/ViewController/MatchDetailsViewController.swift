@@ -9,6 +9,10 @@ import UIKit
 
 class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
     
+    @IBOutlet weak var matchLbl: UILabel!
+    @IBOutlet weak var dateAndTimeLbl: UILabel!
+    @IBOutlet weak var venueLbl: UILabel!
+    
     var matchData:MatchData = MatchData()
     
     weak var matchViewModel:MatchDetailViewModel?
@@ -18,7 +22,7 @@ class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
         // Do any additional setup after loading the view.
         matchViewModel = MatchDetailViewModel(view: self)
         matchViewModel?.bindEmployeeViewModelToController = {
-            self.updateUI()
+                self.updateUI()
         }
     }
     
@@ -36,7 +40,11 @@ class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
     
     func updateUI() {
         matchData = matchViewModel?.matchData ?? MatchData()
-        print("\n\n Match Data team away = \(matchData.matchDetail.teamAway)")
+        DispatchQueue.main.async { [self] in
+            matchLbl.text = "Match : \(self.matchData.teamsData.four.nameFull) vs \(self.matchData.teamsData.five.nameFull)"
+            dateAndTimeLbl.text = "Date & Time : \(self.matchData.matchDetail.match.date) \(self.matchData.matchDetail.match.time)"
+        }
+        
     }
     
 }

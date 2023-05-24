@@ -25,8 +25,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGT-xY-392">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGT-xY-392">
                                         <rect key="frame" x="10" y="66.5" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-mD-HrA">
+                                        <rect key="frame" x="10" y="107.5" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84b-Ov-bO3">
+                                        <rect key="frame" x="10" y="148.5" width="374" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -35,11 +47,17 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.23354718543046357" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="oxi-2K-YAM" firstAttribute="top" secondItem="PYY-9q-eHa" secondAttribute="top" constant="10" id="0nu-UW-hUt"/>
+                                    <constraint firstItem="84b-Ov-bO3" firstAttribute="top" secondItem="5R1-mD-HrA" secondAttribute="bottom" constant="20" id="6Gb-Eh-8lF"/>
                                     <constraint firstAttribute="trailing" secondItem="oxi-2K-YAM" secondAttribute="trailing" constant="10" id="BaU-6f-vZx"/>
+                                    <constraint firstItem="5R1-mD-HrA" firstAttribute="leading" secondItem="iGT-xY-392" secondAttribute="leading" id="Gx2-jK-GZM"/>
                                     <constraint firstItem="iGT-xY-392" firstAttribute="top" secondItem="oxi-2K-YAM" secondAttribute="bottom" constant="30" id="OZb-Eh-RXF"/>
                                     <constraint firstItem="iGT-xY-392" firstAttribute="leading" secondItem="PYY-9q-eHa" secondAttribute="leading" constant="10" id="W3P-H8-ai5"/>
+                                    <constraint firstItem="5R1-mD-HrA" firstAttribute="trailing" secondItem="iGT-xY-392" secondAttribute="trailing" id="a6s-PV-6ng"/>
                                     <constraint firstItem="oxi-2K-YAM" firstAttribute="leading" secondItem="PYY-9q-eHa" secondAttribute="leading" constant="10" id="fuT-QK-lja"/>
+                                    <constraint firstItem="5R1-mD-HrA" firstAttribute="top" secondItem="iGT-xY-392" secondAttribute="bottom" constant="20" id="jHO-xD-np3"/>
+                                    <constraint firstItem="84b-Ov-bO3" firstAttribute="leading" secondItem="5R1-mD-HrA" secondAttribute="leading" id="jwu-wR-zP5"/>
                                     <constraint firstAttribute="trailing" secondItem="iGT-xY-392" secondAttribute="trailing" constant="10" id="rmB-JO-xCB"/>
+                                    <constraint firstItem="84b-Ov-bO3" firstAttribute="trailing" secondItem="5R1-mD-HrA" secondAttribute="trailing" id="upb-N8-kvf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -52,6 +70,11 @@
                             <constraint firstItem="PYY-9q-eHa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wZH-bB-VZF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateAndTimeLbl" destination="5R1-mD-HrA" id="7TB-37-noH"/>
+                        <outlet property="matchLbl" destination="iGT-xY-392" id="mLU-5a-TNu"/>
+                        <outlet property="venueLbl" destination="84b-Ov-bO3" id="RB5-cX-ZIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

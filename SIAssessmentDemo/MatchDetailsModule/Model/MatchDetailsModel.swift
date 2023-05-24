@@ -9,11 +9,28 @@ import Foundation
 
 class MatchData {
     var matchDetail:MatchDetail = MatchDetail()
+    var teamsData:Teams = Teams()
 }
 
 class MatchDetail {
     var teamHome:String = ""
     var teamAway:String = ""
+    var match:Match = Match()
+}
+
+class Match{
+    var date:String = ""
+    var time:String = ""
+}
+
+class Teams {
+    var four:TeamDetail = TeamDetail()
+    var five:TeamDetail = TeamDetail()
+}
+
+class TeamDetail {
+    var nameFull:String = ""
+    var nameShort:String = ""
 }
 
 class MatchDetailsModel {
@@ -45,28 +62,30 @@ class MatchDetailsModel {
 
                     matchData.matchDetail = matchdetail
                     
+                    let match = matchDetail?["Match"] as? [String:Any]
+                    let match_date = match?["Date"] as? String ?? ""
+                    let match_time = match?["Time"] as? String ?? ""
+                    
+                    matchData.matchDetail.match.date = match_date
+                    matchData.matchDetail.match.time = match_time
+                    
+                    let teams = json?["Teams"] as? [String:Any]
+                    let team_four = teams?["4"] as? [String:Any]
+                    let team_five = teams?["5"] as? [String:Any]
+                    
+                    let teamData1 = TeamDetail()
+                    teamData1.nameFull = team_four?["Name_Full"] as? String ?? ""
+                    
+                    let teamData2 = TeamDetail()
+                    teamData2.nameFull = team_five?["Name_Full"] as? String ?? ""
+                    
+                    let Teams = Teams()
+                    Teams.four = teamData1
+                    Teams.five = teamData2
+                    
+                    matchData.teamsData = Teams
                     completion(matchData,nil)
                     
-                    /*
-                    if employeeArray?.count ?? 0 > 0 {
-                        for member in employeeArray! {
-                            let id = member["id"] as? Int ?? 0
-                            let name = member["employee_name"] as? String ?? ""
-                            let salary = member["employee_salary"] as? UInt64 ?? 0
-                            let age = member["employee_age"] as? Int ?? 0
-                            
-                            let employee = Employee()
-                            employee.id = id
-                            employee.employeeName = name
-                            employee.employeeSalary = salary
-                            employee.employeeAge = age
-                            
-                            allEmployee.append(employee)
-                        }
-                       completion(allEmployee, nil)
-                    } else {
-                        completion(nil, nil)
-                    } */
                 } catch {
                     print("error Msg")
                     completion(nil, error)
