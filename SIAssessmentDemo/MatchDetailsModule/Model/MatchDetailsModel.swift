@@ -242,6 +242,7 @@ class MatchDetailsModel {
                     
                     matchData.teamsData.five.players.player1 = Player1_2
                     
+                    
                     let player2_2 = players1_2?["4330"] as? [String:Any]
                     full_name1_2 = player2_2?["Name_Full"] as? String ?? ""
                     isKeeper1_2 = player2_2?["Iskeeper"] as? Bool ?? false
@@ -259,6 +260,61 @@ class MatchDetailsModel {
                     Player2_2.bowling.style = bowlingStyle1_2
                     
                     matchData.teamsData.five.players.player2 = Player2_2
+                    
+                    
+                    let player3_2 = players1_2?["4338"] as? [String:Any]
+                    full_name1_2 = player3_2?["Name_Full"] as? String ?? ""
+                    isKeeper1_2 = player3_2?["Iskeeper"] as? Bool ?? false
+                    isCaptain1_2 = player3_2?["Iscaptain"] as? Bool ?? false
+                    batting1_2 = player3_2?["Batting"] as? [String:Any]
+                    battingStyle1_2 = batting1_2?["Style"] as? String ?? ""
+                    bowling1_2 = player3_2?["Bowling"] as? [String:Any]
+                    bowlingStyle1_2 = bowling1_2?["Style"] as? String ?? ""
+                    
+                    let Player3_2 = PlayerDetails()
+                    Player3_2.name_full = full_name1_2
+                    Player3_2.isKeeper = isKeeper1_2
+                    Player3_2.isCaptain = isCaptain1_2
+                    Player3_2.batting.style = battingStyle1_2
+                    Player3_2.bowling.style = bowlingStyle1_2
+                    
+                    matchData.teamsData.five.players.player3 = Player3_2
+                    
+                    let player4_2 = players1_2?["4964"] as? [String:Any]
+                    full_name1_2 = player4_2?["Name_Full"] as? String ?? ""
+                    isKeeper1_2 = player4_2?["Iskeeper"] as? Bool ?? false
+                    isCaptain1_2 = player4_2?["Iscaptain"] as? Bool ?? false
+                    batting1_2 = player4_2?["Batting"] as? [String:Any]
+                    battingStyle1_2 = batting1_2?["Style"] as? String ?? ""
+                    bowling1_2 = player4_2?["Bowling"] as? [String:Any]
+                    bowlingStyle1_2 = bowling1_2?["Style"] as? String ?? ""
+                    
+                    let Player4_2 = PlayerDetails()
+                    Player4_2.name_full = full_name1_2
+                    Player4_2.isKeeper = isKeeper1_2
+                    Player4_2.isCaptain = isCaptain1_2
+                    Player4_2.batting.style = battingStyle1_2
+                    Player4_2.bowling.style = bowlingStyle1_2
+                    
+                    matchData.teamsData.five.players.player4 = Player4_2
+                    
+                    let player5_2 = players1_2?["10167"] as? [String:Any]
+                    full_name1_2 = player5_2?["Name_Full"] as? String ?? ""
+                    isKeeper1_2 = player5_2?["Iskeeper"] as? Bool ?? false
+                    isCaptain1_2 = player5_2?["Iscaptain"] as? Bool ?? false
+                    batting1_2 = player5_2?["Batting"] as? [String:Any]
+                    battingStyle1_2 = batting1_2?["Style"] as? String ?? ""
+                    bowling1_2 = player5_2?["Bowling"] as? [String:Any]
+                    bowlingStyle1_2 = bowling1_2?["Style"] as? String ?? ""
+                    
+                    let Player5_2 = PlayerDetails()
+                    Player5_2.name_full = full_name1_2
+                    Player5_2.isKeeper = isKeeper1_2
+                    Player5_2.isCaptain = isCaptain1_2
+                    Player5_2.batting.style = battingStyle1_2
+                    Player5_2.bowling.style = bowlingStyle1_2
+                    
+                    matchData.teamsData.five.players.player5 = Player5_2
         
                     completion(matchData,nil)
                     

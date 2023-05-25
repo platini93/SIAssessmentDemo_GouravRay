@@ -24,11 +24,11 @@ class TeamInformationViewController: UIViewController {
         
         indiaTeam = [matchData.teamsData.four.players.player1, matchData.teamsData.four.players.player2, matchData.teamsData.four.players.player3, matchData.teamsData.four.players.player4, matchData.teamsData.four.players.player5]
         
-        nzTeam = [matchData.teamsData.five.players.player1, matchData.teamsData.five.players.player2]
+        nzTeam = [matchData.teamsData.five.players.player1, matchData.teamsData.five.players.player2, matchData.teamsData.five.players.player3, matchData.teamsData.five.players.player4, matchData.teamsData.five.players.player5]
         
         squadTableView.delegate = self
         squadTableView.dataSource = self
-        squadTableView.separatorStyle = .singleLine
+        squadTableView.separatorStyle = .none
         squadTableView.register(UINib(nibName: "SquadTableViewCell", bundle: nil), forCellReuseIdentifier: "SquadTableViewCell")
     }
     
@@ -78,7 +78,7 @@ extension TeamInformationViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70.0
+        return 80.0
     }
     
     
