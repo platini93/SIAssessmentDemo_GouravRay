@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JQY-M5-sSq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JQY-M5-sSq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYY-9q-eHa">
-                                <rect key="frame" x="10" y="98" width="394" height="754"/>
+                                <rect key="frame" x="10" y="98" width="394" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxi-2K-YAM">
                                         <rect key="frame" x="10" y="10" width="374" height="26.5"/>
@@ -53,7 +53,7 @@
                                         </constraints>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Team Info"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Squads"/>
                                         <connections>
                                             <action selector="teamInfoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="huD-38-aFO"/>
                                         </connections>
@@ -70,6 +70,7 @@
                                     <constraint firstItem="iGT-xY-392" firstAttribute="top" secondItem="oxi-2K-YAM" secondAttribute="bottom" constant="30" id="OZb-Eh-RXF"/>
                                     <constraint firstItem="iGT-xY-392" firstAttribute="leading" secondItem="PYY-9q-eHa" secondAttribute="leading" constant="10" id="W3P-H8-ai5"/>
                                     <constraint firstItem="5R1-mD-HrA" firstAttribute="trailing" secondItem="iGT-xY-392" secondAttribute="trailing" id="a6s-PV-6ng"/>
+                                    <constraint firstAttribute="height" constant="300" id="dVb-Uu-peu"/>
                                     <constraint firstItem="oxi-2K-YAM" firstAttribute="leading" secondItem="PYY-9q-eHa" secondAttribute="leading" constant="10" id="fuT-QK-lja"/>
                                     <constraint firstItem="5R1-mD-HrA" firstAttribute="top" secondItem="iGT-xY-392" secondAttribute="bottom" constant="20" id="jHO-xD-np3"/>
                                     <constraint firstItem="84b-Ov-bO3" firstAttribute="leading" secondItem="5R1-mD-HrA" secondAttribute="leading" id="jwu-wR-zP5"/>
@@ -81,7 +82,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PYY-9q-eHa" secondAttribute="bottom" constant="10" id="JNm-SS-bkE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PYY-9q-eHa" secondAttribute="trailing" constant="10" id="PhE-yI-pAA"/>
                             <constraint firstItem="PYY-9q-eHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="RP1-ML-1gr"/>
                             <constraint firstItem="PYY-9q-eHa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wZH-bB-VZF"/>
@@ -90,6 +90,7 @@
                     <navigationItem key="navigationItem" id="bdK-EB-M2o"/>
                     <connections>
                         <outlet property="dateAndTimeLbl" destination="5R1-mD-HrA" id="7TB-37-noH"/>
+                        <outlet property="innerView" destination="PYY-9q-eHa" id="hM2-Na-5X5"/>
                         <outlet property="matchLbl" destination="iGT-xY-392" id="mLU-5a-TNu"/>
                         <outlet property="teamInfoBtn" destination="ens-ze-QIo" id="9vo-E5-xrv"/>
                         <outlet property="venueLbl" destination="84b-Ov-bO3" id="RB5-cX-ZIi"/>
@@ -110,7 +111,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YB-YT-th8">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-VG-5r3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Squads" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-VG-5r3">
                                         <rect key="frame" x="10" y="19.5" width="394" height="31.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -3,6 +3,7 @@ import UIKit
 
 class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
     
+    @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var matchLbl: UILabel!
     @IBOutlet weak var dateAndTimeLbl: UILabel!
     @IBOutlet weak var venueLbl: UILabel!
@@ -23,6 +24,7 @@ class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         teamInfoBtn.layer.cornerRadius = 5.0
+        innerView.layer.cornerRadius = 10.0
         matchViewModel = MatchDetailViewModel(view: self)
         matchViewModel?.bindEmployeeViewModelToController = {
                 self.updateUI()
