@@ -83,5 +83,19 @@ extension TeamInformationViewController: UITableViewDelegate, UITableViewDataSou
         return 80.0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var data:PlayerDetails = PlayerDetails()
+        if indexPath.section == 0 {
+            data = indiaTeam[indexPath.row]
+        } else {
+            data = nzTeam[indexPath.row]
+        }
+        
+        let alert = UIAlertController(title: "Info", message: "Batting Style : \(data.batting.style) \n Bowling Style : \(data.bowling.style)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     
 }
