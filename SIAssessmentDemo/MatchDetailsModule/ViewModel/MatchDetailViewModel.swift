@@ -4,6 +4,7 @@ import Foundation
 protocol MatchViewProtocol {
    func showActIndicator()
    func hideActIndicator()
+   func showAlertView(message:String)
 }
 
 class MatchDetailViewModel {
@@ -32,7 +33,8 @@ class MatchDetailViewModel {
            
             self.view?.hideActIndicator()
             if error != nil {
-                print("Error : \(error)")
+                //print("Error : \(error)")
+                self.view?.showAlertView(message: "\(error)")
                 
             } else if matchData != nil {
                 self.matchData = matchData ?? MatchData()

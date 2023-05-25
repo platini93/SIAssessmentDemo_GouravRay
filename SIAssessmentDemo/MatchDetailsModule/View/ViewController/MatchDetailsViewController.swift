@@ -43,6 +43,16 @@ class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
         }
     }
     
+    func showAlertView(message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: "\(message)", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
     func updateUI() {
         matchData = matchViewModel?.matchData ?? MatchData()
         DispatchQueue.main.async { [self] in
