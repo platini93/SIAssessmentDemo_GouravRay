@@ -22,7 +22,8 @@ class TeamInformationViewController: UIViewController {
         print("Team 2 player 1 = \(matchData.teamsData.five.players.player1.name_full)")
         print("Team 2 player 2 = \(matchData.teamsData.five.players.player2.name_full)")
         
-        indiaTeam = [matchData.teamsData.four.players.player1, matchData.teamsData.four.players.player2, matchData.teamsData.four.players.player3, matchData.teamsData.four.players.player4, matchData.teamsData.four.players.player5]
+        indiaTeam = [matchData.teamsData.four.players.player1, matchData.teamsData.four.players.player2, matchData.teamsData.four.players.player3, matchData.teamsData.four.players.player4, matchData.teamsData.four.players.player5, matchData.teamsData.four.players.player6, matchData.teamsData.four.players.player7,
+                     matchData.teamsData.four.players.player8, matchData.teamsData.four.players.player9, matchData.teamsData.four.players.player10, matchData.teamsData.four.players.player11]
         
         nzTeam = [matchData.teamsData.five.players.player1, matchData.teamsData.five.players.player2, matchData.teamsData.five.players.player3, matchData.teamsData.five.players.player4, matchData.teamsData.five.players.player5]
         
