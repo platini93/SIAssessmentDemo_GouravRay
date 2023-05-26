@@ -64,9 +64,11 @@ extension TeamInformationViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "INDIA"
+            //return "INDIA"
+            return matchData.teamsData.four.nameFull.uppercased()
         } else {
-            return "NEW ZEALAND"
+            //return "NEW ZEALAND"
+            return matchData.teamsData.five.nameFull.uppercased()
         }
     }
     
