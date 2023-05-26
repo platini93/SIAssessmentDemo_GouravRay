@@ -50,7 +50,10 @@ extension TeamInformationViewController: UITableViewDelegate, UITableViewDataSou
             data = nzTeam[indexPath.row]
         }
         cell.playerNameLbl.text = data.name_full
-        if data.isKeeper {
+        
+        if data.isCaptain && data.isKeeper {
+            cell.playerRoleLbl.text = "Captain & Wicket-Keeper"
+        } else if data.isKeeper {
             cell.playerRoleLbl.text = "Wicket-Keeper"
         } else if data.isCaptain {
             cell.playerRoleLbl.text = "Captain"
