@@ -23,10 +23,10 @@ class MatchDetailViewModel {
     
     init(view: MatchViewProtocol) {
         self.view = view
-        callFuncToGetMatchData()
+        callAPIToGetMatchData()
     }
     
-    func callFuncToGetMatchData() {
+    func callAPIToGetMatchData() {
         
         self.view?.showActIndicator()
         matchModel.callMatchAPI(completion: { matchData, error in
