@@ -23,8 +23,8 @@ class MatchDetailViewModel {
     
     init(view: MatchViewProtocol) {
         self.view = view
-        //callAPIToGetMatchData() // call for first API data
-        callSecondAPIToGetMatchData() // call for second API data
+        callAPIToGetMatchData() // call for first API data
+        //callSecondAPIToGetMatchData() // call for second API data
     }
     
     
