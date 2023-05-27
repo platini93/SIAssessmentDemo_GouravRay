@@ -13,11 +13,11 @@ class MatchDetailViewModel {
     
     var matchData: MatchData = MatchData() {
            didSet {
-               self.bindEmployeeViewModelToController()
+               self.bindMatchDetailViewModelToController()
            }
        }
     
-    var bindEmployeeViewModelToController:(() -> ()) = {}
+    var bindMatchDetailViewModelToController:(() -> ()) = {}
     
     var view: MatchViewProtocol?
     

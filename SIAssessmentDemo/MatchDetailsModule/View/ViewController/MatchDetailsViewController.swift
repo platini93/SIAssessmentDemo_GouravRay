@@ -26,8 +26,8 @@ class MatchDetailsViewController: UIViewController, MatchViewProtocol  {
         teamInfoBtn.layer.cornerRadius = 5.0
         innerView.layer.cornerRadius = 10.0
         matchViewModel = MatchDetailViewModel(view: self)
-        matchViewModel?.bindEmployeeViewModelToController = {
-                self.updateUI()
+        matchViewModel?.bindMatchDetailViewModelToController = {
+            self.updateUI()
         }
     }
     
